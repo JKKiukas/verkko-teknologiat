@@ -9,15 +9,16 @@
 <body>
 <header>Haalarimerkkikauppa Oy</header>
 <nav>
-    <ul>
-        <li><a href="kotisivu.html">Etusivu</a></li>
-        <li><a href="kauppa.html">Kauppa</a></li>
-        <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
-    </ul>
+    <a class="linkkiEtusivulle" href="kotisivu.html">Etusivu</a>
+    <br/>
+    <a class="linkkiKauppaan" href="kauppa.html">Kauppa</a>
+    <br>
+    <a class="linkkiYhteystietoihin" href="yhteystiedot.html">Yhteystiedot</a>
 </nav>
+
 <main>
     <section>
-        <h1>Yhteystiedot</h1>
+        <h1 align="center">Yhteystiedot</h1>
         <ul>Haalarimerkkikauppa Oy</ul>
         <ul>Merkkikatu 2</ul>
         <ul>53850</ul>
@@ -26,6 +27,31 @@
         <ul>
             <a href="mailto:haalarimerkkikauppaoy.yritys@yhteydenotto.fi">haalarimerkkikauppaoy.yritys@yhteydenotto.fi</a>
         </ul>
+
+        <h1>Avoin palaute</h1>
+        <p>Lähetä kehitysideat, surut, ilot tai vaikka vihat täyttämällä alla oleva lomake </p>
+
+        <form>
+            <fieldset class="palauteOsio">
+                <h2 align="center">Palautelaatikko</h2>
+                <P>Etunimi:</P>
+                <label>
+                    <input class="palauteosioEtunimi" type="text" name="etunimi">
+                </label>
+
+                <p class="palauteosioSukunimi">Sukunimi:</p>
+                <label>
+                    <input class="palauteosioEtunimi" type="text" name="sukunimi">
+                </label>
+                <br><br>
+
+                <label>
+                    <textarea rows="10" cols="100"></textarea>
+                </label>
+
+                <input type="submit" value="Lähetä">
+            </fieldset>
+        </form>
 
         <aside>
             <h3>Käy myös katsomassa valikoima haalarimerkkejä myös näiltä sivuilta.</h3>
