@@ -1,0 +1,38 @@
+footer {
+    position: absolute;
+    text-align: center;
+    background: #b3b3ff;
+    color: black;
+    height: 40px;
+    width: 100%;
+    font-size: 200%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+header {
+    text-align: center;
+    background: #b3b3ff;
+    color: #5c5c3d;
+    padding: 5px;
+    font-size: 200%;
+}
+
+nav {
+    text-align: center;
+    background: #b3b3ff;
+    color: black;
+    padding: 5px;
+    font-size: 150%;
+    margin-bottom: 5px;
+}
+
+.linkkiEtusivulle, .linkkiKauppaan, .linkkiYhteystietoihin {
+    text-decoration: none;
+    background: #b3b3ff;
+    color: #5c5c3d;
+}
+
+a:hover {
+    color: lime;
+}
