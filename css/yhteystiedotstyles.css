@@ -9,12 +9,11 @@
 }
 
 footer {
-    position: absolute;
     text-align: center;
     background: #b3b3ff;
     color: black;
     height: 40px;
-    width: 100%;
+    width: 99.22%;
     font-size: 200%;
     padding: 5px;
     margin-top: 5px;
@@ -34,7 +33,7 @@ nav {
     color: black;
     padding: 5px;
     font-size: 150%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .linkkiEtusivulle, .linkkiKauppaan, .linkkiYhteystietoihin {
@@ -43,6 +42,34 @@ nav {
     color: #5c5c3d;
 }
 
-a:hover {
+.linkkiSähköpostiin {
+    text-decoration: none;
+}
+
+a:hover, .sidenav a:hover {
     color: lime;
+}
+
+.sidenav {
+    height: 1209px;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    right: 8px;
+    background-color: #ff6666;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #5c5c3d;
+    display: block;
+}
+
+body {
+    background: beige;
 }
