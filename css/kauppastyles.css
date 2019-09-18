@@ -1,28 +1,35 @@
 footer {
+    position: fixed;
     text-align: center;
     background: #b3b3ff;
     color: black;
-    height: 40px;
-    width: 99.22%;
-    font-size: 200%;
+    height: 3%;
+    font-size: large;
     padding: 5px;
     margin-top: 5px;
+    bottom: 0;
+    right: 0;
+    width: 100%;
 }
 
 header {
+    position: fixed;
     text-align: center;
     background: #b3b3ff;
     color: #5c5c3d;
     padding: 5px;
-    font-size: 200%;
+    font-size: 150%;
+    top: 0;
+    width: 100%;
+    right: 0;
 }
 
 nav {
     text-align: center;
     background: #b3b3ff;
-    color: black;
+    color: #5c5c3d;
     padding: 5px;
-    font-size: 150%;
+    font-size: 100%;
     margin-bottom: 10px;
 }
 
@@ -36,7 +43,7 @@ nav {
     text-decoration: none;
 }
 
-a:hover {
+a:hover, .sidenav a:hover {
     color: lime;
 }
 
@@ -53,14 +60,12 @@ table, th, tr {
 }
 
 .sidenav {
-    height: 1673.5px;
-    width: 250px;
-    position: absolute;
-    z-index: 1;
-    top: 25%;
-    right: 8px;
+    position: fixed;
+    height: 100%;
+    width: 20%;
+    top: 23.2%;
+    right: 0;
     background-color: #ff6666;
-    overflow-x: hidden;
     padding-top: 20px;
 }
 
@@ -74,4 +79,21 @@ table, th, tr {
 
 body {
     background: beige;
+}
+
+.hyväksyNappi {
+    position: absolute;
+    height: 5%;
+    width: 5%;
+    left: 56.7%;
+}
+
+@media screen and (max-width: 900px) {
+    * {
+        font-size: x-small;
+    }
+
+    aside {
+        display: none;
+    }
 }
