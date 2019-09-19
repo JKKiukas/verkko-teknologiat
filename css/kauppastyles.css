@@ -55,8 +55,20 @@ table, th, tr {
     background: #ffff99;
 }
 
-.toinenTaulukko {
-    background: lightgrey;
+.vilkkuva {
+    animation: infinite;
+    animation-duration: 0.1s;
+    animation-name: vilkkuvaRivi;
+}
+
+@keyframes vilkkuvaRivi {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.5;
+    }
 }
 
 .sidenav {
@@ -95,5 +107,20 @@ body {
 
     aside {
         display: none;
+    }
+}
+
+table {
+    animation-duration: 10s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 0.1%;
     }
 }
