@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kartta</title>
+</head>
+<body>
+<iframe src="https://www.google.com/maps?q=' + address + city + '&output=embed"
+        width="700" height="500" id="kartta">
+</iframe>
+
+<div>
+    <label>
+        Katuosoite: <input type="text" id="getAddress">
+    </label>
+    <label>
+        Kaupunki: <input type="text" id="getCity">
+    </label>
+    <label>
+        <input type="button" value="Hae" id="showPlace" onclick="searchPlace()">
+    </label>
+</div>
+<script src="js/kartta.js"></script>
+</body>
+</html>
