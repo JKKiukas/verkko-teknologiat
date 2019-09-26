@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laskin</title>
+    <link rel="stylesheet" type="text/css" href="css/laskin.css">
+</head>
+<body>
+<label>
+    <input type="button" value="-" id="firstButtonMinus" onclick="decreaseFirstValue()">
+</label>
+<label>
+    <input type="number" id="getFirstNumber">
+</label>
+<label>
+    <input type="button" value="+" id="firstButtonPlus" onclick="increaseFirstValue()">
+</label>
+
+<label>
+    <select id="selectOperator">
+        <option value="plusSign">+</option>
+        <option value="minusSign">-</option>
+        <option value="multiplyingSign">*</option>
+        <option value="divisionSign">/</option>
+    </select>
+</label>
+
+<label>
+    <input type="button" value="-" id="secondButtonMinus" onclick="decreaseSecondValue()">
+</label>
+<label>
+    <input type="number" id="getSecondNumber">
+</label>
+<label>
+    <input type="button" value="+" id="secondButtonPlus" onclick="increaseSecondValue()">
+</label>
+
+<label>
+    <input type="button" value="Submit values" id="submitValues" onclick="calculateNumbers()">
+</label>
+<script src="js/laskin.js"></script>
+</body>
+</html>
