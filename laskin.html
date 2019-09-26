@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Laskin</title>
-    <link rel="stylesheet" type="text/css" href="css/laskin.css">
 </head>
 <body>
 <label>
     <input type="button" value="-" id="firstButtonMinus" onclick="decreaseFirstValue()">
 </label>
 <label>
-    <input type="number" id="getFirstNumber">
+    <input type="number" id="getFirstNumber" >
 </label>
 <label>
     <input type="button" value="+" id="firstButtonPlus" onclick="increaseFirstValue()">
@@ -37,6 +36,10 @@
 
 <label>
     <input type="button" value="Submit values" id="submitValues" onclick="calculateNumbers()">
+</label>
+
+<label>
+    Result: <input type="number" id="result">
 </label>
 <script src="js/laskin.js"></script>
 </body>
