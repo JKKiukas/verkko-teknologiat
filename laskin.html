@@ -9,7 +9,7 @@
     <input type="button" value="-" id="firstButtonMinus" onclick="decreaseFirstValue()">
 </label>
 <label>
-    <input type="number" id="getFirstNumber">
+    <input type="number" id="getFirstNumber" readonly>
 </label>
 <label>
     <input type="button" value="+" id="firstButtonPlus" onclick="increaseFirstValue()">
@@ -28,7 +28,7 @@
     <input type="button" value="-" id="secondButtonMinus" onclick="decreaseSecondValue()">
 </label>
 <label>
-    <input type="number" id="getSecondNumber">
+    <input type="number" id="getSecondNumber" readonly>
 </label>
 <label>
     <input type="button" value="+" id="secondButtonPlus" onclick="increaseSecondValue()">
@@ -39,7 +39,11 @@
 </label>
 
 <label>
-    Result: <input type="number" id="result">
+    Result: <input type="number" id="result" readonly>
+</label>
+
+<label>
+    Total calculations: <input type="number" id="resultAmount" readonly>
 </label>
 <script src="js/laskin.js"></script>
 </body>

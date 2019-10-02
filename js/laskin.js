@@ -13,6 +13,9 @@ function decreaseFirstValue() {
     if (value < 2) {
         document.getElementById("firstButtonMinus").disabled = true;
     }
+    if (value < 9) {
+        document.getElementById("firstButtonPlus").disabled = false;
+    }
 }
 
 function increaseFirstValue() {
@@ -22,6 +25,9 @@ function increaseFirstValue() {
 
     if (value > 9) {
         document.getElementById("firstButtonPlus").disabled = true;
+    }
+    if (value > 1) {
+        document.getElementById("firstButtonMinus").disabled = false;
     }
 }
 
@@ -33,6 +39,9 @@ function decreaseSecondValue() {
     if (value < 2) {
         document.getElementById("secondButtonMinus").disabled = true;
     }
+    if (value < 9) {
+        document.getElementById("secondButtonPlus").disabled = false;
+    }
 }
 
 function increaseSecondValue() {
@@ -42,6 +51,9 @@ function increaseSecondValue() {
 
     if (value > 9) {
         document.getElementById("secondButtonPlus").disabled = true;
+    }
+    if (value > 1) {
+        document.getElementById("secondButtonMinus").disabled = false;
     }
 }
 
