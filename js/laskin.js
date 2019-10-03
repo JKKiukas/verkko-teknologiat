@@ -3,6 +3,25 @@ window.onload = function () {
    satunnaisen luvun väliltä 1-10. */
 
     document.getElementById("getSecondNumber").value = Math.floor(Math.random() * 10) + 1;
+
+    var firstNumber = document.getElementById("getFirstNumber").value;
+    var secondNumber = document.getElementById("getSecondNumber").value;
+
+    /* Jos luku on sivun ladattua 10, sitä ei voi suurentaa. */
+    if (firstNumber > 9) {
+        document.getElementById("firstButtonPlus").disabled = true;
+    }
+    if (secondNumber > 9) {
+        document.getElementById("secondButtonPlus").disabled = true;
+    }
+
+    /* Jos luku on sivun ladattua 1, sitä ei voi pienentää. */
+    if (firstNumber < 2) {
+        document.getElementById("firstButtonMinus").disabled = true;
+    }
+    if (secondNumber < 2) {
+        document.getElementById("secondButtonMinus").disabled = true;
+    }
 };
 
 function decreaseFirstValue() {
@@ -60,22 +79,23 @@ function increaseSecondValue() {
 function calculateNumbers() {
     var firstNumber = document.getElementById("getFirstNumber").value;
     var secondNumber = document.getElementById("getSecondNumber").value;
-    var value = document.getElementById("selectOperator").value;
+    var operator = document.getElementById("selectOperator").value;
+    document.getElementById("resultAmount").value++;
 
-    if (value === "plusSign") {
-        console.log(parseInt(firstNumber) + parseInt(secondNumber));
+    if (operator === "plusSign") {
         document.getElementById("result").value = parseInt(firstNumber) + parseInt(secondNumber);
+        console.log(firstNumber, "+", secondNumber, "=", parseInt(firstNumber) + parseInt(secondNumber));
     }
-    if (value === "minusSign") {
-        console.log(firstNumber - secondNumber);
-        document.getElementById("result").value = parseInt(firstNumber) - parseInt(secondNumber);
+    if (operator === "minusSign") {
+        document.getElementById("result").value = firstNumber - secondNumber;
+        console.log(firstNumber, "-", secondNumber, "=", firstNumber - secondNumber);
     }
-    if (value === "multiplyingSign") {
-        console.log(firstNumber * secondNumber);
-        document.getElementById("result").value = parseInt(firstNumber) * parseInt(secondNumber);
+    if (operator === "multiplyingSign") {
+        document.getElementById("result").value = firstNumber * secondNumber;
+        console.log(firstNumber, "*", secondNumber, "=", firstNumber * secondNumber);
     }
-    if (value === "divisionSign") {
-        console.log(firstNumber / secondNumber);
-        document.getElementById("result").value = parseInt(firstNumber) / parseInt(secondNumber);
+    if (operator === "divisionSign") {
+        document.getElementById("result").value = firstNumber / secondNumber;
+        console.log(firstNumber, "/", secondNumber, "=", firstNumber / secondNumber);
     }
 }
