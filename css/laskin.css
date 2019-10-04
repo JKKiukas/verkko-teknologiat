@@ -1,0 +1,6 @@
+#jokeDialog, .ui-widget-content {
+    background: lime;
+    border: 5px solid lime;
+    color: white;
+    font-weight: bold;
+}

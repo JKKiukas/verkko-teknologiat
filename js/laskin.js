@@ -22,8 +22,12 @@ window.onload = function () {
     if (secondNumber < 2) {
         document.getElementById("secondButtonMinus").disabled = true;
     }
+
+    /* Sivun ladattua vitsiä ei pääse katsomaan ennen kuin 10 laskua on suoritettu. */
+    document.getElementById("showJoke").disabled = true;
 };
 
+/* Funktio ensimmiäisen arvon vähentämistä varten ja tarkistus, että arvo on väliltä 1-10. */
 function decreaseFirstValue() {
     var value = parseInt(document.getElementById("getFirstNumber").value);
     value--;
@@ -37,6 +41,7 @@ function decreaseFirstValue() {
     }
 }
 
+/* Funktio ensimmiäisen arvon lisäämistä varten ja tarkistus, että arvo on väliltä 1-10. */
 function increaseFirstValue() {
     var value = parseInt(document.getElementById("getFirstNumber").value);
     value++;
@@ -50,6 +55,7 @@ function increaseFirstValue() {
     }
 }
 
+/* Funktio toisen arvon vähentämistä varten ja tarkistus, että arvo on väliltä 1-10. */
 function decreaseSecondValue() {
     var value = parseInt(document.getElementById("getSecondNumber").value);
     value--;
@@ -63,6 +69,7 @@ function decreaseSecondValue() {
     }
 }
 
+/* Funktio toisen arvon lisäämistä varten ja tarkistus, että arvo on väliltä 1-10. */
 function increaseSecondValue() {
     var value = parseInt(document.getElementById("getSecondNumber").value);
     value++;
@@ -76,11 +83,14 @@ function increaseSecondValue() {
     }
 }
 
+/* Funktio tuloksen laskemista varten. */
 function calculateNumbers() {
     var firstNumber = document.getElementById("getFirstNumber").value;
     var secondNumber = document.getElementById("getSecondNumber").value;
     var operator = document.getElementById("selectOperator").value;
-    document.getElementById("resultAmount").value++;
+
+    /* Palauttaa arvon, kuinka monta laskutoimitusta on suoritettu */
+    var results = document.getElementById("resultAmount").value++;
 
     if (operator === "plusSign") {
         document.getElementById("result").value = parseInt(firstNumber) + parseInt(secondNumber);
@@ -97,5 +107,12 @@ function calculateNumbers() {
     if (operator === "divisionSign") {
         document.getElementById("result").value = firstNumber / secondNumber;
         console.log(firstNumber, "/", secondNumber, "=", firstNumber / secondNumber);
+    }
+
+    /* Kun laskutoimitusten määrä on 10 tai enemmän, nappi aktivoituu ja käyttäjä pääsee lukemaan vitsin. */
+    document.getElementById("showJoke").disabled = results < 9;
+
+    if (results === 19) {
+        alert("Congratulation this was your 20th calculation.")
     }
 }

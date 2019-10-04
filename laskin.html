@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Laskin</title>
+    <link rel="stylesheet" type="text/css" href="css/laskin.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <!-- Funktio dialogille -->
+    <script>
+        $(function () {
+            $("#jokeDialog").dialog({
+                autoOpen: false,
+            });
+            $("#showJoke").click(function () {
+                $("#jokeDialog").dialog("open");
+            });
+        });
+    </script>
+
 </head>
 <body>
+<h1>Welcome to a calculator</h1>
+<p>Here you can make plus, subtraction, multiplying and division calculations between numbers 1 and 10.</p>
+<p>When you have made 10 calculations you will be rewarded with a joke.</p>
+
 <label>
     <input type="button" value="-" id="firstButtonMinus" onclick="decreaseFirstValue()">
 </label>
@@ -45,6 +65,15 @@
 <label>
     Total calculations: <input type="text" id="resultAmount" readonly size="1">
 </label>
+
+<label>
+    <input type="button" value="Joke" id="showJoke">
+</label>
+
+<div id="jokeDialog">What will happen if you have a wooden car with wooden engine.
+    <p>It wooden start.</p>
+</div>
+
 <script src="js/laskin.js"></script>
 </body>
 </html>
