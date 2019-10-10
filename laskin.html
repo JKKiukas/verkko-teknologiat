@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Laskin</title>
-    <link rel="stylesheet" type="text/css" href="css/laskin.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="css/laskin.css"> --> <!-- Dialogin teema CSS:ää käytettäessä. -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/vader/jquery-ui.css"> <!-- Dialogin teema. -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Funktio dialogille -->
     <script>
         $(function () {
             $("#jokeDialog").dialog({
-                autoOpen: false,
+                autoOpen: false
             });
             $("#showJoke").click(function () {
                 $("#jokeDialog").dialog("open");
