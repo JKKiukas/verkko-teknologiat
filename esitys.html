@@ -6,18 +6,19 @@
     <title>Esitys</title>
 </head>
 <body>
+
 <h1 align="center">Kuvaesitys</h1>
 
 <div>
-    <label>
-        <input class="arrowLeft" type="button" value="<" id="previousPic" onclick="previousPicture()">
-    </label>
-    <img src="kuvat/Kissi.jpg" alt="kissa"
-         title="kissa Kissi" height="300" width="350">
-    <label>
-        <input class="arrowRight" type="button" value=">" id="nextPic" onclick="nextPicture()">
-    </label>
+    <img class="slideShow" src="kuvat/Kissi.jpg" alt="kissa1" title="Kissi" height="300" width="350">
+    <img class="slideShow" src="kuvat/Mirri.jpg" alt="kissa2" title="Mirri" height="300" width="350">
+    <img class="slideShow" src="kuvat/Kissimirri.jpg" alt="kissa3" title="KissiMirri" height="300" width="350">
+
+    <button class="arrowLeft" onclick="newPicture(-1)"><</button>
+    <button class="arrowRight" onclick="newPicture(1)">></button>
+    <button class="timer" onclick="timer()">Timer</button>
 </div>
 
+<script src="js/esitys.js"></script>
 </body>
 </html>

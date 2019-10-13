@@ -29,3 +29,20 @@ img {
     font-size: 16px;
     cursor: pointer;
 }
+
+.slideShow {
+    display: none;
+}
+
+.timer {
+    position: absolute;
+    top: 65%;
+    left: 45%;
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
