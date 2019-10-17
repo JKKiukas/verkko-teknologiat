@@ -34,10 +34,10 @@ img {
     display: none;
 }
 
-.pause {
+.pausePlay {
     position: absolute;
-    top: 65%;
-    left: 50%;
+    top: 80%;
+    left: 45%;
     background-color: gray;
     border: none;
     color: white;
@@ -47,15 +47,15 @@ img {
     cursor: pointer;
 }
 
-.play {
+.nameOfCat {
     position: absolute;
     top: 65%;
-    left: 40%;
+    left: 36.3%;
+    height: 10%;
+    width: 27.5%;
     background-color: gray;
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 25px;
 }

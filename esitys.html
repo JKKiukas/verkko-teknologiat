@@ -14,10 +14,22 @@
     <img class="slideShow" src="kuvat/Mirri.jpg" alt="kissa2" title="Mirri" height="300" width="350">
     <img class="slideShow" src="kuvat/Kissimirri.jpg" alt="kissa3" title="KissiMirri" height="300" width="350">
 
-    <button class="arrowLeft" onclick="newPicture(-1)"><</button>
-    <button class="arrowRight" onclick="newPicture(1)">></button>
-    <button class="pause" onclick="pausePicture()">Pause</button>
-    <button class="play" onclick="playPicture()">Play</button>
+    <div class="nameOfCat">
+        <p>Kissi</p>
+    </div>
+
+    <div class="nameOfCat">
+        <p>Mirri</p>
+    </div>
+
+    <div class="nameOfCat">
+        <p>Kissimirri</p>
+    </div>
+
+    <button class="arrowLeft" onclick="newPicture(-1); newText(-1)"><</button>
+    <button class="arrowRight" onclick="newPicture(1); newText(1)">></button>
+    <button class="pausePlay" onclick="pausePlayPicture(); pausePlayText()">Pause</button>
+
 </div>
 <script src="js/esitys.js"></script>
 </body>
