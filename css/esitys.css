@@ -37,8 +37,8 @@ img {
 .pausePlay {
     position: absolute;
     top: 80%;
-    left: 45%;
-    background-color: gray;
+    left: 47%;
+    background-color: red;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -58,4 +58,9 @@ img {
     color: white;
     text-align: center;
     font-size: 25px;
+}
+
+.changeButtonColor
+{
+    background-color:green;
 }

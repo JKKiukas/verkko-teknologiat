@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/esitys.css">
     <title>Esitys</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
 
@@ -28,7 +30,16 @@
 
     <button class="arrowLeft" onclick="newPicture(-1); newText(-1)"><</button>
     <button class="arrowRight" onclick="newPicture(1); newText(1)">></button>
-    <button class="pausePlay" onclick="pausePlayPicture(); pausePlayText()">Pause</button>
+    <button
+            class="pausePlay" id="iconButton" onclick="pausePlayPicture(); pausePlayText()"><i class="fa fa-pause"></i>
+    </button>
+
+    <!-- Funktio vaihtaa pause / play napin väriä. -->
+    <script>
+        $('button').click(function () {
+            $(this).toggleClass('changeButtonColor');
+        });
+    </script>
 
 </div>
 <script src="js/esitys.js"></script>

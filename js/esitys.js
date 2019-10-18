@@ -1,3 +1,4 @@
+/* Funktio vaihtaa automaattisesti kuvia. */
 var nextPicture = 0;
 var playPicture;
 automaticShow();
@@ -16,6 +17,7 @@ function automaticShow() {
     playPicture = setTimeout(automaticShow, 2000);
 }
 
+/* Funktio vaihtaa automaattisesti kuvan nimen kun kuva vaihtuu. */
 var nextText = 0;
 var playText;
 automaticText();
@@ -34,6 +36,7 @@ function automaticText() {
     playText = setTimeout(automaticText, 2000);
 }
 
+/* Funktio vaihtaa kuvan kun painaa kuvan viereisestä napista. */
 var slidePic = 1;
 displayPicture(slidePic);
 
@@ -56,6 +59,7 @@ function displayPicture(pic) {
     getPicture[slidePic - 1].style.display = "block";
 }
 
+/* Funktio pysäyttää ja laittaa esityksen takaisi päälle kun painaa napista. */
 function pausePlayPicture() {
     if (playPicture != null) {
         clearTimeout(playPicture);
@@ -65,6 +69,7 @@ function pausePlayPicture() {
     }
 }
 
+/* Funktio pysäyttää ja laittaa tekstin takaisin päälle kun painaa napista. */
 function pausePlayText() {
     if (playText != null) {
         clearTimeout(playText);
@@ -74,6 +79,7 @@ function pausePlayText() {
     }
 }
 
+/* Funktio vaihtaa tekstiä kun painaa kuvan viereisestä napista. Teksti kertoo kuvan nimen. */
 var textSlide = 1;
 showText(textSlide);
 
@@ -95,3 +101,11 @@ function showText(x) {
     }
     slides[textSlide - 1].style.display = "block";
 }
+
+/* Funktio vaihtaa pause / play napin iconia kun painaa kuvan alapuolella olevasta napista. */
+document.getElementById("iconButton").addEventListener("click", function (changeIcon) {
+    var button = changeIcon.target;
+
+    button.classList.toggle("fa-pause");
+    button.classList.toggle("fa-play");
+}, false);
