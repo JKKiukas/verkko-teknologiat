@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <title>Grid</title>
     <link rel="stylesheet" type="text/css" href="css/grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="grid">
-    <div align="center" class="box1">1</div>
-    <div align="center" class="box2">2</div>
-    <div align="center" class="box3">3</div>
-    <div align="center" class="box4">4</div>
-    <div align="center" class="box5">5</div>
-    <div align="center" class="box6">6</div>
+<div>
+    <button class="buttonList" onclick="listView()"><i class="fa fa-bars"></i> List</button>
+    <button class="buttonGrid" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
 </div>
+<br>
+
+<div class="row" style="height: 200px">
+    <div class="box" style="background-color:#ff6666; height: 200%">
+        <img class="kissa" src="kuvat/Kissi.jpg" alt="kissa1" title="Kissi" height="300" width="350">
+    </div>
+    <div class="box" style="background-color:#ffff99; height: 200%">
+        <img class="katti" src="kuvat/Mirri.jpg" alt="kissa2" title="Mirri" height="300" width="350">
+    </div>
+</div>
+
+<div class="row" style="height: 200px">
+    <div class="box" style="background-color:#dddddd; height: 200%">
+        <img class="kisu" src="kuvat/Kissimirri.jpg" alt="kissa3" title="KissiMirri" height="300" width="350">
+    </div>
+    <div class="box" style="background-color:#b3b3ff; height: 200%">
+        <img class="merkki1" src="kuvat/HaalarimerkkiSkip.png" alt="HaalarimerkkiSkip"
+             title="Skiphaalarimerkki" height="300" width="350">
+    </div>
+</div>
+
+<div class="row" style="height: 200px">
+    <div class="box" style="background-color:aquamarine; height: 200%">
+        <img class="merkki2" src="kuvat/HaalarimerkkiAsiaKunnossa.jpg" alt="HaalarimerkkiAsiaKunnossa"
+             title="AsiaKunnossahaalarimerkki" height="300" width="350">
+    </div>
+    <div class="box" style="background-color:burlywood; height: 200%">
+        <img class="merkki3" src="kuvat/haalarimerkki.jpg" alt="404 haalarimerkki"
+             title="Motivaatio haalarimerkki" height="300" width="350">
+    </div>
+</div>
+<script src="js/grid.js"></script>
 </body>
 </html>
