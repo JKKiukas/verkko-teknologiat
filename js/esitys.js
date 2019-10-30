@@ -1,8 +1,21 @@
-/* Funktio vaihtaa automaattisesti kuvia. */
+/* Funktio tallentaa kuvan ja sen nimen local storageen ja hakee tiedot, kun sivu ladataan uudelleen. */
 var nextPicture = 0;
-var playPicture;
-automaticShow();
+var nextText = 0;
+window.onload = function () {
+    if (localStorage.hasOwnProperty("saveImage") && localStorage.hasOwnProperty("saveText")) {
+        nextPicture = localStorage.getItem("saveImage");
+        nextText = localStorage.getItem("saveText")
+    }
+    else {
+        nextPicture = 0;
+        nextText = 0;
+    }
+    automaticShow();
+    automaticText();
+};
 
+/* Funktio vaihtaa automaattisesti kuvia. */
+var playPicture;
 function automaticShow() {
     var i;
     var x = document.getElementsByClassName("slideShow");
@@ -13,15 +26,15 @@ function automaticShow() {
     if (nextPicture > x.length) {
         nextPicture = 1
     }
+
+    localStorage.setItem("saveImage", nextPicture);
+
     x[nextPicture - 1].style.display = "block";
     playPicture = setTimeout(automaticShow, 2000);
 }
 
-/* Funktio vaihtaa automaattisesti kuvan nimen kun kuva vaihtuu. */
-var nextText = 0;
+/* Funktio vaihtaa automaattisesti kuvan nimen, kun kuva vaihtuu. */
 var playText;
-automaticText();
-
 function automaticText() {
     var j;
     var z = document.getElementsByClassName("nameOfCat");
@@ -32,11 +45,14 @@ function automaticText() {
     if (nextText > z.length) {
         nextText = 1
     }
+
+    localStorage.setItem("saveText", nextText);
+
     z[nextText - 1].style.display = "block";
     playText = setTimeout(automaticText, 2000);
 }
 
-/* Funktio vaihtaa kuvan kun painaa kuvan viereisestä napista. */
+/* Funktio vaihtaa kuvan, kun painaa kuvan viereisestä napista. */
 var slidePic = 1;
 displayPicture(slidePic);
 
@@ -59,7 +75,7 @@ function displayPicture(pic) {
     getPicture[slidePic - 1].style.display = "block";
 }
 
-/* Funktio pysäyttää ja laittaa esityksen takaisi päälle kun painaa napista. */
+/* Funktio pysäyttää ja laittaa esityksen takaisi päälle, kun painaa napista. */
 function pausePlayPicture() {
     if (playPicture != null) {
         clearTimeout(playPicture);
@@ -69,7 +85,7 @@ function pausePlayPicture() {
     }
 }
 
-/* Funktio pysäyttää ja laittaa tekstin takaisin päälle kun painaa napista. */
+/* Funktio pysäyttää ja laittaa tekstin takaisin päälle, kun painaa napista. */
 function pausePlayText() {
     if (playText != null) {
         clearTimeout(playText);
@@ -79,7 +95,7 @@ function pausePlayText() {
     }
 }
 
-/* Funktio vaihtaa tekstiä kun painaa kuvan viereisestä napista. Teksti kertoo kuvan nimen. */
+/* Funktio vaihtaa tekstiä, kun painaa kuvan viereisestä napista. Teksti kertoo kuvan nimen. */
 var textSlide = 1;
 showText(textSlide);
 
@@ -102,7 +118,7 @@ function showText(x) {
     slides[textSlide - 1].style.display = "block";
 }
 
-/* Funktio vaihtaa pause / play napin iconia kun painaa kuvan alapuolella olevasta napista. */
+/* Funktio vaihtaa pause / play napin iconia, kun painaa kuvan alapuolella olevasta napista. */
 document.getElementById("iconButton").addEventListener("click", function (changeIcon) {
     var button = changeIcon.target;
 
