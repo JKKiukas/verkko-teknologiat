@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajastin</title>
+    <link rel="stylesheet" type="text/css" href="css/ajastin.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body onload="init()">
+
+<div class="inner">
+    Kello on nyt:
+    <p id="currentTime"></p>
+    <p>Hälytysajan asettaminen</p>
+
+    <label>
+        <input type="time" id="alarmTime" step="2">
+    </label>
+    <input type="submit" value="Aseta" id="alarmButton" onclick="setAlarm()">
+    <input type="submit" value="Pysäytä" onclick="stopAlarm()">
+</div>
+
+<canvas id="canvas"></canvas>
+<script src="js/ajastin.js"></script>
+</body>
+</html>
