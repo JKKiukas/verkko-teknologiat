@@ -55,7 +55,7 @@ function clock() {
     ctx.save();
     ctx.lineWidth = 5;
     for (i = 0; i < 60; i++) {
-        if (i % 5!== 0) {
+        if (i % 5 !== 0) {
             ctx.beginPath();
             ctx.moveTo(117, 0);
             ctx.lineTo(120, 0);
@@ -67,7 +67,7 @@ function clock() {
 
     var sec = now.getSeconds();
     var min = now.getMinutes();
-    var hr  = now.getHours();
+    var hr = now.getHours();
 
     hr = hr >= 12 ? hr - 12 : hr;
 
@@ -75,7 +75,7 @@ function clock() {
 
     // write Hours
     ctx.save();
-    ctx.rotate(hr * (Math.PI / 6) + (Math.PI / 360) * min + (Math.PI / 21600) *sec);
+    ctx.rotate(hr * (Math.PI / 6) + (Math.PI / 360) * min + (Math.PI / 21600) * sec);
     ctx.lineWidth = 14;
     ctx.beginPath();
     ctx.moveTo(-20, 0);
@@ -129,7 +129,7 @@ function clock() {
 window.requestAnimationFrame(clock);
 
 var alarmClock = {
-    init : function () {
+    init: function () {
         alarmClock.selectHours = document.getElementById("selectHours");
         alarmClock.selectMinutes = document.getElementById("selectMinutes");
         alarmClock.selectSeconds = document.getElementById("selectSeconds");
@@ -152,9 +152,9 @@ var alarmClock = {
         setInterval(alarmClock.tick, 1000);
     },
 
-    createSel : function (max) {
+    createSel: function (max) {
         var selector = document.createElement("select");
-        for (var i=0; i<=max; i++) {
+        for (var i = 0; i <= max; i++) {
             var opt = document.createElement("option");
             i = alarmClock.padzero(i);
             opt.value = i;
@@ -164,13 +164,16 @@ var alarmClock = {
         return selector
     },
 
-    padzero : function (num) {
-        if (num < 10) { num = "0" + num; }
-        else { num = num.toString(); }
+    padzero: function (num) {
+        if (num < 10) {
+            num = "0" + num;
+        } else {
+            num = num.toString();
+        }
         return num;
     },
 
-    tick : function () {
+    tick: function () {
         var now = new Date();
         var hr = alarmClock.padzero(now.getHours());
         var min = alarmClock.padzero(now.getMinutes());
@@ -186,7 +189,7 @@ var alarmClock = {
         }
     },
 
-    set : function () {
+    set: function () {
         alarmClock.alarm = alarmClock.hours.value + alarmClock.minutes.value + alarmClock.seconds.value;
         alarmClock.hours.disabled = true;
         alarmClock.minutes.disabled = true;
@@ -195,7 +198,7 @@ var alarmClock = {
         alarmClock.alarmReset.disabled = false;
     },
 
-    reset : function () {
+    reset: function () {
         if (!alarmClock.sound.paused) {
             alarmClock.sound.pause();
         }
