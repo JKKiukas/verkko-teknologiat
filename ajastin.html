@@ -14,26 +14,12 @@
     <p id="currentTime"></p>
     <p>Hälytysajan asettaminen</p>
 
-    <div>
-        <div id="clockHours"></div>
-        <div id="clockMinutes"></div>
-        <div id="clockSeconds"></div>
-    </div>
+    <label>
+        <input type="time" id="alarmTime" step="2">
+    </label>
 
     <input type="submit" value="Aseta" id="alarmSet" onclick="setAlarm()">
-    <input type="submit" value="Pysäytä" id="alarmStop">
-</div>
-
-<div>
-    <div>
-        <div id="selectHours">00</div>
-    </div>
-    <div>
-        <div id="selectMinutes">00</div>
-    </div>
-    <div>
-        <div id="selectSeconds">00</div>
-    </div>
+    <input type="submit" value="Pysäytä" id="alarmStop" onclick="stopAlarm()">
 </div>
 
 <audio id="alarmSound" loop>

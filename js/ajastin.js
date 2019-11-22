@@ -3,6 +3,10 @@ var ctx;
 var alarmHour;
 var alarmMin;
 var alarmSec;
+var sec;
+var min;
+var hr;
+var sound;
 
 function init() {
     time();
@@ -17,7 +21,7 @@ function time() {
 }
 
 function setAlarm() {
-    var alarm = document.getElementById('tpick').value;
+    var alarm = document.getElementById('alarmTime').value;
     console.log(alarm);
 
     alarmHour = alarm.substring(0, 2);
@@ -26,6 +30,10 @@ function setAlarm() {
 }
 
 setInterval(time, 1000);
+
+function stopAlarm() {
+    sound.pause();
+}
 
 function clock() {
     var now = new Date();
@@ -65,9 +73,15 @@ function clock() {
     }
     ctx.restore();
 
-    var sec = now.getSeconds();
-    var min = now.getMinutes();
-    var hr = now.getHours();
+    sec = now.getSeconds();
+    min = now.getMinutes();
+    hr = now.getHours();
+
+    sound = document.getElementById('alarmSound');
+
+    if (min == alarmMin && hr == alarmHour && sec == alarmSec) {
+        sound.play();
+    }
 
     hr = hr >= 12 ? hr - 12 : hr;
 
@@ -127,88 +141,3 @@ function clock() {
 }
 
 window.requestAnimationFrame(clock);
-
-var alarmClock = {
-    init: function () {
-        alarmClock.selectHours = document.getElementById("selectHours");
-        alarmClock.selectMinutes = document.getElementById("selectMinutes");
-        alarmClock.selectSeconds = document.getElementById("selectSeconds");
-
-        alarmClock.hours = alarmClock.createSel(23);
-        document.getElementById("clockHours").appendChild(alarmClock.hours);
-        alarmClock.minutes = alarmClock.createSel(59);
-        document.getElementById("clockMinutes").appendChild(alarmClock.minutes);
-        alarmClock.seconds = alarmClock.createSel(59);
-        document.getElementById("clockSeconds").appendChild(alarmClock.seconds);
-
-        alarmClock.alarmSet = document.getElementById("alarmSet");
-        alarmClock.alarmSet.addEventListener("click", alarmClock.set);
-        alarmClock.alarmReset = document.getElementById("alarmStop");
-        alarmClock.alarmReset.addEventListener("click", alarmClock.reset);
-
-        alarmClock.sound = document.getElementById("alarmSound");
-
-        alarmClock.alarm = null;
-        setInterval(alarmClock.tick, 1000);
-    },
-
-    createSel: function (max) {
-        var selector = document.createElement("select");
-        for (var i = 0; i <= max; i++) {
-            var opt = document.createElement("option");
-            i = alarmClock.padzero(i);
-            opt.value = i;
-            opt.innerHTML = i;
-            selector.appendChild(opt);
-        }
-        return selector
-    },
-
-    padzero: function (num) {
-        if (num < 10) {
-            num = "0" + num;
-        } else {
-            num = num.toString();
-        }
-        return num;
-    },
-
-    tick: function () {
-        var now = new Date();
-        var hr = alarmClock.padzero(now.getHours());
-        var min = alarmClock.padzero(now.getMinutes());
-        var sec = alarmClock.padzero(now.getSeconds());
-
-        if (alarmClock.alarm != null) {
-            now = hr + min + sec;
-            if (now == alarmClock.alarm) {
-                if (alarmClock.sound.paused) {
-                    alarmClock.sound.play();
-                }
-            }
-        }
-    },
-
-    set: function () {
-        alarmClock.alarm = alarmClock.hours.value + alarmClock.minutes.value + alarmClock.seconds.value;
-        alarmClock.hours.disabled = true;
-        alarmClock.minutes.disabled = true;
-        alarmClock.seconds.disabled = true;
-        alarmClock.alarmSet.disabled = true;
-        alarmClock.alarmReset.disabled = false;
-    },
-
-    reset: function () {
-        if (!alarmClock.sound.paused) {
-            alarmClock.sound.pause();
-        }
-        alarmClock.alarm = null;
-        alarmClock.hours.disabled = false;
-        alarmClock.minutes.disabled = false;
-        alarmClock.seconds.disabled = false;
-        alarmClock.alarmSet.disabled = false;
-        alarmClock.alarmReset.disabled = true;
-    }
-};
-
-window.addEventListener("load", alarmClock.init);
