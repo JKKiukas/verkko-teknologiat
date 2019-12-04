@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lippukauppa</title>
+
 </head>
 <body>
 <h1>Lippukauppa</h1>
@@ -14,53 +15,53 @@
         <label for="customerFirstName"></label>
         <input type="text"
                id="customerFirstName"
-               required minlength="2"
-               pattern="[a-öA-Ö]*"
-               placeholder="Etunimi"
-               title="Etunimessä ei saa olla numeroita">
+               placeholder="Etunimi">
     </div>
     <br>
     <div>
         <label for="customerLastName"></label>
         <input type="text"
                id="customerLastName"
-               required minlength="2"
-               pattern="[a-öA-Ö]*"
-               placeholder="Sukunimi"
-               title="Sukunimessä ei saa olla numeroita">
+               placeholder="Sukunimi">
     </div>
     <br>
     <div>
         <label for="customerAge"></label>
         <input type="number"
                id="customerAge"
-               required minlength="1"
                min="0"
                placeholder="Ikä">
     </div>
-    <br>
     <div>
-        <label>Oletko MTK:n jäsen?</label>
-        <label for="isCustomerMTKMember"></label>
-        <input type="checkbox"
-               id="isCustomerMTKMember">
+        <p>
+            Valitse alta, jos kuulut johonkin seuraavista ryhmistä.
+        </p>
+    </div>
+    <div>
+        <label>MTK:n jäsen</label>
+        <input type="checkbox" id="mtkMember">
     </div>
     <br>
     <div>
-        <label>Oletko varusmies?</label>
-        <label for="isCustomerInMilitary"></label>
-        <input type="checkbox"
-               id="isCustomerInMilitary">
+        <label>Varusmies</label>
+        <input type="checkbox" id="militaryServicer">
     </div>
     <br>
     <div>
-        <label>Oletko opiskelija?</label>
-        <label for="isCustomerStudent"></label>
-        <input type="checkbox"
-               id="isCustomerStudent">
+        <label>Opiskelija</label>
+        <input type="checkbox" id="student">
     </div>
     <br>
-    <input type="submit" value="Laske" onclick="calculateTicketPrice()">
+    <div>
+        <br>
+        <input type="button" value="Laske" onclick="calculateTicketPrice()">
+    </div>
+    <div>
+        <h3 id="printPrice"></h3>
+    </div>
 </form>
+<br>
+<br>
+<script src="js/lippukauppa.js"></script>
 </body>
 </html>
