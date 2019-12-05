@@ -1,0 +1,39 @@
+.getPrice {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 3px;
+}
+
+.openDiscountDialog {
+    top: 84%;
+    position: absolute;
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 18%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+
+.active, .openDiscountDialog:hover {
+    background-color: #555;
+}
+
+
+.content {
+    top: 64.3%;
+    left: 18.65%;
+    position: absolute;
+    width: 18%;
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    text-align: left;
+}

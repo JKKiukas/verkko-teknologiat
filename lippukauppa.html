@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lippukauppa</title>
-
+    <link rel="stylesheet" type="text/css" href="css/lippukauppa.css">
 </head>
 <body>
 <h1>Lippukauppa</h1>
@@ -39,29 +39,48 @@
     </div>
     <div>
         <label>MTK:n jäsen</label>
-        <input type="checkbox" id="mtkMember">
+        <input type="checkbox" id="mtkMember" onclick="disableMilitaryServicerCheckbox()">
     </div>
     <br>
     <div>
         <label>Varusmies</label>
-        <input type="checkbox" id="militaryServicer">
+        <input type="checkbox" id="militaryServicer" onclick="disableStudentAndMTKCheckbox()">
     </div>
     <br>
     <div>
         <label>Opiskelija</label>
-        <input type="checkbox" id="student">
+        <input type="checkbox" id="student" onclick="disableMilitaryServicerCheckbox()">
     </div>
     <br>
     <div>
         <br>
-        <input type="button" value="Laske" onclick="calculateTicketPrice()">
+        <input type="button" value="Laske" class="getPrice" onclick="calculateTicketPrice(); saveCustomerInfo()">
     </div>
     <div>
         <h3 id="printPrice"></h3>
     </div>
+    <br>
+    <button type="button" class="openDiscountDialog" onclick="showDiscounts()">Lippujen hinnoittelun perusteet</button>
+    <div class="content">
+        <ul>
+            <li>Normaalihinta 16 €</li>
+            <li>Alle 7 v. ilmaiseksi</li>
+            <li>65 v. ja yli: 50 % alennus</li>
+            <li>7-15 v. 50% alennus</li>
+            <li>Mtk jäsen: 15 % alennus</li>
+            <li>Varusmies: 50 % alennus</li>
+            <li>Opiskelija: 45 % alennus</li>
+        </ul>
+    </div>
 </form>
-<br>
-<br>
+<div>
+    <h3 id="printFirstName"></h3>
+    <h3 id="printLastName"></h3>
+    <h3 id="printAge"></h3>
+    <h3 id="printIfMTKMember"></h3>
+    <h3 id="printIfMilitaryServicer"></h3>
+    <h3 id="printIfStudent"></h3>
+</div>
 <script src="js/lippukauppa.js"></script>
 </body>
 </html>

@@ -35,12 +35,18 @@ var discountFactors = [
     }
 ];
 
+/* Globaalit muuttujat */
+var age;
+var mtkMember;
+var militaryServicer;
+var student;
 
+/* Funktio laskee käyttäjälle lipun hinnan */
 function calculateTicketPrice() {
-    var age = document.getElementById("customerAge").value;
-    var mtkMember = document.getElementById("mtkMember").checked;
-    var militaryServicer = document.getElementById("militaryServicer").checked;
-    var student = document.getElementById("student").checked;
+    age = document.getElementById("customerAge").value;
+    mtkMember = document.getElementById("mtkMember").checked;
+    militaryServicer = document.getElementById("militaryServicer").checked;
+    student = document.getElementById("student").checked;
 
     var discount = 0.00;
 
@@ -60,16 +66,16 @@ function calculateTicketPrice() {
     if (age >= 65) {
         discount = thirdGroup;
     }
-    
+
     if (age >= 7 && age <= 15) {
         discount = fourthGroup;
     }
-    
+
     if (mtkMember) {
         discount = fifthGroup;
     }
 
-    if (militaryServicer) {
+    if (militaryServicer && age >= 18) {
         discount = sixthGroup;
     }
 
@@ -85,4 +91,58 @@ function calculateTicketPrice() {
 
     /* Tulostaa lipun hinnan käyttäjälle. toFixed(2) pyöristää hinnan kahteen desimaaliin. */
     document.getElementById("printPrice").innerHTML = totalPrice.toFixed(2) + " €";
+}
+
+/* Käyttäjä pääsee näkemään, kuinka alennukset muodostuvat nappia painamalla. */
+function showDiscounts() {
+    var getDiscounts = document.getElementsByClassName("openDiscountDialog");
+    var i;
+
+    for (i = 0; i < getDiscounts.length; i++) {
+        getDiscounts[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+}
+
+/* Tulostaa käyttäjän syöttämät tiedot näkyviin. */
+function saveCustomerInfo() {
+    document.getElementById("printFirstName").innerHTML = document.getElementById('customerFirstName').value;
+    document.getElementById("printLastName").innerHTML = document.getElementById('customerLastName').value;
+    document.getElementById("printAge").innerHTML = document.getElementById('customerAge').value;
+
+    if (mtkMember === true) {
+        document.getElementById("printIfMTKMember").innerHTML = "Kyllä";
+    } else {
+        document.getElementById("printIfMTKMember").innerHTML = "Ei";
+    }
+
+    if (militaryServicer === true) {
+        document.getElementById("printIfMilitaryServicer").innerHTML = "Kyllä";
+    } else {
+        document.getElementById("printIfMilitaryServicer").innerHTML = "Ei";
+    }
+
+    if (student === true) {
+        document.getElementById("printIfStudent").innerHTML = "Kyllä";
+    } else {
+        document.getElementById("printIfStudent").innerHTML = "Ei";
+    }
+}
+
+/* Jos käyttäjä on varusmies, muita alennuksia ei voi valita */
+function disableStudentAndMTKCheckbox() {
+    document.getElementById("mtkMember").disabled = true;
+    document.getElementById("student").disabled = true;
+}
+
+/* Jos käyttäjä on opiskelija tai MTK:n jäsen, varusmiehen alennusta ei voi valita. */
+function disableMilitaryServicerCheckbox() {
+    document.getElementById("militaryServicer").disabled = true;
 }
