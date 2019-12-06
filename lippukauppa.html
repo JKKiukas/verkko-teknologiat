@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>Lippukauppa</title>
     <link rel="stylesheet" type="text/css" href="css/lippukauppa.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body class="ticketShop">
 <h1>Lippukauppa</h1>
 <p>Tervetuloa ostamaan lippu maatalousnättelyyn.</p>
 <P>Syötä tietosi alle niin ohjelma laskee lippusi hinnan.</P>
 
 <form>
+    <!-- Käyttäjä syöttää alla oleviin kenttiin etunimensä, sukunimensä ja ikänsä. -->
     <div>
         <label for="customerFirstName"></label>
         <input type="text"
@@ -37,6 +39,7 @@
             Valitse alta, jos kuulut johonkin seuraavista ryhmistä.
         </p>
     </div>
+    <!-- Käyttäjä voi valita alla olevista checkboxeista onko hän MTK:n jäsen, varusmies tai opiskelija. -->
     <div>
         <label>MTK:n jäsen</label>
         <input type="checkbox" id="mtkMember" onclick="disableMilitaryServicerCheckbox()">
@@ -54,14 +57,14 @@
     <br>
     <div>
         <br>
-        <input type="button" value="Laske" class="getPrice" onclick="calculateTicketPrice(); saveCustomerInfo()">
-    </div>
-    <div>
-        <h3 id="printPrice"></h3>
+        <!-- Alla oleva nappi laskee lipun hinnan, tallentaa käyttäjän tiedot ja avaa yhteenvedon lipun ostosta. -->
+        <input type="button" value="Laske" class="getPrice" id="showReview"
+               onclick="calculateTicketPrice(); printCustomerInfo(); openReview()">
     </div>
     <br>
-    <button type="button" class="openDiscountDialog" onclick="showDiscounts()">Lippujen hinnoittelun perusteet</button>
-    <div class="content">
+    <!-- Alla olevaa nappia painamalla selviää, kuinka lipun hinta muodostuu. -->
+    <input type="button" value="Lippujen hinnoittelun perusteet" class="discountDialogButton" onclick="showDiscounts()">
+    <div class="discountDialogContent">
         <ul>
             <li>Normaalihinta 16 €</li>
             <li>Alle 7 v. ilmaiseksi</li>
@@ -73,13 +76,33 @@
         </ul>
     </div>
 </form>
-<div>
-    <h3 id="printFirstName"></h3>
-    <h3 id="printLastName"></h3>
-    <h3 id="printAge"></h3>
-    <h3 id="printIfMTKMember"></h3>
-    <h3 id="printIfMilitaryServicer"></h3>
-    <h3 id="printIfStudent"></h3>
+<!-- Tilauksen yhteenveto alkaa tästä. -->
+<div id="overviewCard" class="overviewDialog">
+    <!-- Yhteenvedon sisältö. -->
+    <div class="overviewDialogContent">
+        <div class="overviewDialogContentHeader">
+            <span class="closeOverviewDialog">&times;</span>
+            <h2>Yhteenveto lipun tilauksesta</h2>
+        </div>
+        <div class="overviewDialogContentBody">
+            <div>
+                <h3>Etunimi:</h3>
+                <h3 id="printFirstName"></h3> <!-- Tulostaa käyttäjän etunimen. -->
+                <h3>Sukunimi:</h3>
+                <h3 id="printLastName"></h3> <!-- Tulostaa käyttäjän sukunimen. -->
+                <h3>Ikä:</h3>
+                <h3 id="printAge"></h3> <!-- Tulostaa käyttäjän iän. -->
+                <h3>MTK:n jäsen:</h3>
+                <h3 id="printIfMTKMember"></h3> <!-- Tulostaa tiedon onko käyttäjä MTK:n jäsen. -->
+                <h3>Varusmies:</h3>
+                <h3 id="printIfMilitaryServicer"></h3> <!-- Tulostaa tiedon onko käyttäjä varusmies. -->
+                <h3>Opiskelija:</h3>
+                <h3 id="printIfStudent"></h3> <!-- Tulostaa tiedon onko käyttäjä opiskelija. -->
+                <h3>Lipun hinta:</h3>
+                <h3 id="printPrice"></h3> <!-- Tulostaa lipun hinnan käyttäjälle. -->
+            </div>
+        </div>
+    </div>
 </div>
 <script src="js/lippukauppa.js"></script>
 </body>

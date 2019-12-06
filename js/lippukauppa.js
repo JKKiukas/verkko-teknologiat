@@ -75,6 +75,7 @@ function calculateTicketPrice() {
         discount = fifthGroup;
     }
 
+    /* Jos käyttäjä on valinnut olevansa varusmies, hänen on oltava vähintään 18-vuotias, muuten alennusta ei saa. */
     if (militaryServicer && age >= 18) {
         discount = sixthGroup;
     }
@@ -87,7 +88,7 @@ function calculateTicketPrice() {
         discount = eighthGroup;
     }
 
-    var totalPrice = firstGroup - (firstGroup * discount);
+    var totalPrice = firstGroup - firstGroup * discount;
 
     /* Tulostaa lipun hinnan käyttäjälle. toFixed(2) pyöristää hinnan kahteen desimaaliin. */
     document.getElementById("printPrice").innerHTML = totalPrice.toFixed(2) + " €";
@@ -95,7 +96,7 @@ function calculateTicketPrice() {
 
 /* Käyttäjä pääsee näkemään, kuinka alennukset muodostuvat nappia painamalla. */
 function showDiscounts() {
-    var getDiscounts = document.getElementsByClassName("openDiscountDialog");
+    var getDiscounts = document.getElementsByClassName("discountDialogButton");
     var i;
 
     for (i = 0; i < getDiscounts.length; i++) {
@@ -112,7 +113,7 @@ function showDiscounts() {
 }
 
 /* Tulostaa käyttäjän syöttämät tiedot näkyviin. */
-function saveCustomerInfo() {
+function printCustomerInfo() {
     document.getElementById("printFirstName").innerHTML = document.getElementById('customerFirstName').value;
     document.getElementById("printLastName").innerHTML = document.getElementById('customerLastName').value;
     document.getElementById("printAge").innerHTML = document.getElementById('customerAge').value;
@@ -145,4 +146,28 @@ function disableStudentAndMTKCheckbox() {
 /* Jos käyttäjä on opiskelija tai MTK:n jäsen, varusmiehen alennusta ei voi valita. */
 function disableMilitaryServicerCheckbox() {
     document.getElementById("militaryServicer").disabled = true;
+}
+
+/* Avaa käyttäjälle yhteenvedon lipputilauksesta. */
+function openReview() {
+    var overviewDialog = document.getElementById("overviewCard");
+    var overviewButton = document.getElementById("showReview");
+    var closeOverview = document.getElementsByClassName("closeOverviewDialog")[0];
+
+    /* Käyttäjän klikatessa laske nappia, yhteenvetokortti avautuu */
+    overviewButton.onclick = function() {
+        overviewDialog.style.display = "block";
+    };
+
+    /* Käyttäjän klikatessa ruksista yhteenvetokortissa, kortti sulkeutuu. */
+    closeOverview.onclick = function() {
+        overviewDialog.style.display = "none";
+    };
+
+    /* Käyttäjän klikatessa yhteenvetokortin ulkopuolelta, kortti sulkeutuu. */
+    window.onclick = function(event) {
+        if (event.target === overviewDialog) {
+            overviewDialog.style.display = "none";
+        }
+    };
 }
