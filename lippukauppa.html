@@ -54,18 +54,26 @@
         <label>Opiskelija</label>
         <input type="checkbox" id="student" onclick="disableMilitaryServicerCheckbox()">
     </div>
-    <br>
     <div>
+        <div>
+            <h3 id="ticketPriceIs"></h3>
+            <h3 id="printPrice"></h3>
+        </div>
         <br>
         <!-- Alla oleva nappi laskee lipun hinnan, tallentaa käyttäjän tiedot ja avaa yhteenvedon lipun ostosta. -->
-        <input type="button" value="Laske" class="getPrice" id="showReview"
-               onclick="calculateTicketPrice(); printCustomerInfo(); openReview()">
+        <input type="button" value="Laske" class="getPrice" onclick="calculateTicketPrice(); printCustomerInfo()">
+    </div>
+    <div>
+        <!-- Alla oleva nappi avaa yhteenvetokortin. -->
+        <input type="button" value="Yhteenveto" id="showReview" onclick="openReview()">
     </div>
     <br>
     <!-- Alla olevaa nappia painamalla selviää, kuinka lipun hinta muodostuu. -->
     <input type="button" value="Lippujen hinnoittelun perusteet" class="discountDialogButton" onclick="showDiscounts()">
     <div class="discountDialogContent">
         <ul>
+            <p>Käyttäjälle myönnetään vain yksi alennus. Jos käyttäjä on opiskelija sekä MTK:n jäsen,
+                myönnetään hänelle molemmat alennukset.</p>
             <li>Normaalihinta 16 €</li>
             <li>Alle 7 v. ilmaiseksi</li>
             <li>65 v. ja yli: 50 % alennus</li>
@@ -99,7 +107,7 @@
                 <h3>Opiskelija:</h3>
                 <h3 id="printIfStudent"></h3> <!-- Tulostaa tiedon onko käyttäjä opiskelija. -->
                 <h3>Lipun hinta:</h3>
-                <h3 id="printPrice"></h3> <!-- Tulostaa lipun hinnan käyttäjälle. -->
+                <h3 id="printPriceToOverview"></h3> <!-- Tulostaa lipun hinnan käyttäjälle. -->
             </div>
         </div>
     </div>

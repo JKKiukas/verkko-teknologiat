@@ -90,8 +90,14 @@ function calculateTicketPrice() {
 
     var totalPrice = firstGroup - firstGroup * discount;
 
+    /* Tulostaa "Lipun hintasi on" tekstin ennen lipun hintaa. */
+    document.getElementById("ticketPriceIs").innerHTML = "Lipun hintasi on";
+
     /* Tulostaa lipun hinnan käyttäjälle. toFixed(2) pyöristää hinnan kahteen desimaaliin. */
     document.getElementById("printPrice").innerHTML = totalPrice.toFixed(2) + " €";
+
+    /* Tulostaa lipun hinnan käyttäjälle yhteenvetokorttiin. */
+    document.getElementById("printPriceToOverview").innerHTML = totalPrice.toFixed(2) + " €";
 }
 
 /* Käyttäjä pääsee näkemään, kuinka alennukset muodostuvat nappia painamalla. */
@@ -112,7 +118,7 @@ function showDiscounts() {
     }
 }
 
-/* Tulostaa käyttäjän syöttämät tiedot näkyviin. */
+/* Tulostaa käyttäjän syöttämät tiedot näkyviin yhteenvetokorttiin. */
 function printCustomerInfo() {
     document.getElementById("printFirstName").innerHTML = document.getElementById('customerFirstName').value;
     document.getElementById("printLastName").innerHTML = document.getElementById('customerLastName').value;
@@ -155,17 +161,17 @@ function openReview() {
     var closeOverview = document.getElementsByClassName("closeOverviewDialog")[0];
 
     /* Käyttäjän klikatessa laske nappia, yhteenvetokortti avautuu */
-    overviewButton.onclick = function() {
+    overviewButton.onclick = function () {
         overviewDialog.style.display = "block";
     };
 
     /* Käyttäjän klikatessa ruksista yhteenvetokortissa, kortti sulkeutuu. */
-    closeOverview.onclick = function() {
+    closeOverview.onclick = function () {
         overviewDialog.style.display = "none";
     };
 
     /* Käyttäjän klikatessa yhteenvetokortin ulkopuolelta, kortti sulkeutuu. */
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target === overviewDialog) {
             overviewDialog.style.display = "none";
         }
