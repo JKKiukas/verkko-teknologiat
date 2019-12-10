@@ -1,17 +1,33 @@
+/* Vaihtaa sovelluksen taustaväriä. */
 .ticketShop {
     background: antiquewhite;
 }
 
-/* Asettelu checkboxeille, joista valitaan jos on MTK:n jäsen, varusmies tai opiskelija, */
-#mtkMember, #militaryServicer, #student {
+/* Asettelu checkboxeille, joista valitaan jos on MTK:n jäsen, varusmies tai opiskelija. */
+#mtkMember {
     position: absolute;
-    left: 8%;
+    left: 48%;
+    top: 52.7%;
 }
+
+#militaryServicer {
+    position: absolute;
+    left: 48%;
+    top: 57.7%;
+}
+
+#student {
+    position: absolute;
+    left: 48%;
+    top: 62.7%;
+}
+/* Asettelu checkboxeille loppuu tähän. */
 
 /* Asettelu napille, joka laskee lipun hinnan. */
 .getPrice {
     position: absolute;
     top: 75%;
+    left: 40%;
     background-color: blueviolet;
     color: white;
     cursor: pointer;
@@ -31,12 +47,14 @@
     outline: none;
     font-size: 15px;
     top: 82.5%;
+    left: 40%;
     position: absolute;
 }
 
 /* Asttelu napille, joka avaa dialogin, josta näkee kuinka lipun hinta muodostuu. */
 .discountDialogButton {
     top: 90%;
+    left: 40%;
     position: absolute;
     background-color: blueviolet;
     color: white;
@@ -51,7 +69,7 @@
 /* Asttelu dialogille, josta näkee kuinka lipun hinta muodostuu. */
 .discountDialogContent {
     top: 52.9%;
-    left: 18.65%;
+    left: 58.65%;
     position: absolute;
     width: 18%;
     padding: 0 18px;
@@ -141,37 +159,37 @@
 /* Käyttäjän syöttämien tietojen asettelu alkaa tästä. */
 #printFirstName {
     position: absolute;
-    left: 39%;
+    left: 40%;;
     top: 19.7%;
 }
 
 #printLastName {
     position: absolute;
-    left: 39%;
+    left: 40%;
     top: 30.3%;
 }
 
 #printAge {
     position: absolute;
-    left: 39%;
+    left: 40%;
     top: 40.9%;
 }
 
 #printIfMTKMember {
     position: absolute;
-    left: 39%;
+    left: 40%;
     top: 52%;
 }
 
 #printIfMilitaryServicer {
     position: absolute;
-    left: 39%;
+    left: 40%;
     top: 62.5%;
 }
 
 #printIfStudent {
     position: absolute;
-    left: 39%;
+    left: 40%;
     top: 73.2%;
 }
 
@@ -180,13 +198,97 @@
 /* Lipun hinnan asettelu. */
 #printPriceToOverview {
     position: absolute;
-    left: 39%;
+    left: 40%;
     top: 83.8%;
 }
 
 /* Asettelu hinnalle, joka näkyy laske napin yläpuolella. */
 #printPrice {
     position: absolute;
-    left: 11.5%;
+    left: 40%;
     top: 63.5%;
+}
+
+/* Otsikon asettelu. */
+.text1 {
+    position: absolute;
+    left: 40%;
+    top: 0%;
+}
+
+/* Otsikon alapuolella olevan tekstin asettelu. */
+.text2 {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+}
+
+/* Seuraavan tekstin asettelu. */
+.text3 {
+    position: absolute;
+    left: 40%;
+    top: 15%;
+}
+
+/* Syötettävien kenttien jälkeisen tekstin asettelu. */
+.text4 {
+    position: absolute;
+    left: 40%;
+    top: 43%;
+}
+
+/* MTK:n jäsen tekstin asettelu. */
+.groupText1 {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+}
+
+/* Varusmies tekstin asettelu. */
+.groupText2 {
+    position: absolute;
+    left: 40%;
+    top: 55%;
+}
+
+/* Opiskelija tekstin asettelu. */
+.groupText3 {
+    position: absolute;
+    left: 40%;
+    top: 60%;
+}
+
+/* Käyttäjän etunimikentän asettelu. */
+#customerFirstName {
+    position: absolute;
+    left: 40%;
+    top: 23%;
+}
+
+/* Käyttäjän sukunimikentän asettelu. */
+#customerLastName {
+    position: absolute;
+    left: 40%;
+    top: 30.5%;
+}
+
+/* Käyttäjän ikäkentän asettelu. */
+#customerAge {
+    position: absolute;
+    left: 40%;
+    top: 38%;
+}
+
+/* Asettelu vaikuttaa hinnan tulostukseen. */
+#printPrice {
+    position: absolute;
+    left: 50.7%;
+    top: 66%;
+}
+
+/* Asettelu vaikuttaa tekstiin "Lipun hintasi on". */
+#ticketPriceIs {
+    position: absolute;
+    left: 40%;
+    top: 66%;
 }
