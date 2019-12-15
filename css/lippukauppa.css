@@ -68,8 +68,8 @@
 
 /* Asttelu dialogille, josta näkee kuinka lipun hinta muodostuu. */
 .discountDialogContent {
-    top: 52.9%;
-    left: 58.65%;
+    top: 46.8%;
+    left: 40%;
     position: absolute;
     width: 18%;
     padding: 0 18px;
@@ -292,3 +292,81 @@
     left: 40%;
     top: 66%;
 }
+
+/* Responsiivisuus iPhone X:lle ja iPhone6/7/8 Plus alkaa tästä. */
+@media screen and (max-width: 812px) {
+    .discountDialogButton {
+        width: 60%;
+        left: 15%;
+    }
+
+    .text1, .text2, .text3, .text4, #customerFirstName, #customerLastName, #customerAge, .groupText1, .groupText2,
+    .groupText3, .getPrice, #showReview, #ticketPriceIs{
+        left: 15%;
+    }
+
+    #printPrice {
+        left: 52%;
+    }
+
+    #mtkMember {
+        top: 52%;
+        left: 40%;
+    }
+
+    #militaryServicer {
+        top: 57%;
+        left: 40%;
+    }
+
+    #student {
+        top: 62%;
+        left: 40%;
+    }
+
+    .overviewDialogContent {
+        width: 95%;
+    }
+
+    .discountDialogContent {
+        width: 80%;
+        left: 6%;
+        top: 59.7%;
+    }
+}
+/* Responsiivisuus iPhone X:lle ja iPhone6/7/8 Plus loppuu tähän. */
+
+/* Responsiivisuus Galaxy S5, Pixel 2 ja Pixel 2 XL alkaa tästä. */
+@media screen and (max-width: 360px) {
+    .discountDialogContent {
+        top: 51.6%;
+    }
+
+    .discountDialogButton {
+        width: 62%;
+    }
+
+    .text3 {
+        top: 14%;
+    }
+
+    .text4 {
+        top: 41%;
+    }
+
+    #mtkMember {
+        top: 52.5%;
+        left: 40%;
+    }
+
+    #militaryServicer {
+        top: 57.5%;
+        left: 40%;
+    }
+
+    #student {
+        top: 62.5%;
+        left: 40%;
+    }
+}
+/* Responsiivisuus Galaxy S5, Pixel 2 ja Pixel 2 XL loppuu tähän. */
