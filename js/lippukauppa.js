@@ -1,3 +1,4 @@
+/* JSON-tiedosto, josta alennuskerroin haetaan. */
 var discountFactors = [
     {
         "group": "Normaalihinta",
